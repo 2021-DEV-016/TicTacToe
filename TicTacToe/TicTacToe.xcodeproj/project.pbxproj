@@ -20,6 +20,12 @@
 		EFCDDFD527BC326F006DF178 /* BoardCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFD427BC326F006DF178 /* BoardCoordinatorTests.swift */; };
 		EFCDDFD727BC327D006DF178 /* BoardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFD627BC327D006DF178 /* BoardViewControllerTests.swift */; };
 		EFCDDFD927BC3287006DF178 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFD827BC3287006DF178 /* BoardViewModelTests.swift */; };
+		EFCDDFDC27BC34DF006DF178 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFDB27BC34DF006DF178 /* BoardView.swift */; };
+		EFCDDFDE27BC34FF006DF178 /* BoardSquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFDD27BC34FF006DF178 /* BoardSquareView.swift */; };
+		EFCDDFE127BC35E6006DF178 /* BoardConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */; };
+		EFCDDFE427BC368F006DF178 /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE327BC368F006DF178 /* UIStackView+Subviews.swift */; };
+		EFCDDFE727BC36BB006DF178 /* UIStackView+SubviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */; };
+		EFCDDFEA27BC36E6006DF178 /* BoardSquareViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		EFCDDFD427BC326F006DF178 /* BoardCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCoordinatorTests.swift; sourceTree = "<group>"; };
 		EFCDDFD627BC327D006DF178 /* BoardViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewControllerTests.swift; sourceTree = "<group>"; };
 		EFCDDFD827BC3287006DF178 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
+		EFCDDFDB27BC34DF006DF178 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		EFCDDFDD27BC34FF006DF178 /* BoardSquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquareView.swift; sourceTree = "<group>"; };
+		EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardConfiguration.swift; sourceTree = "<group>"; };
+		EFCDDFE327BC368F006DF178 /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
+		EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+SubviewsTests.swift"; sourceTree = "<group>"; };
+		EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquareViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 		EFCDDF9B27BC3127006DF178 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFE227BC367F006DF178 /* Extensions */,
 				EFCDDFCC27BC3196006DF178 /* Board */,
 				EFCDDF9C27BC3127006DF178 /* AppDelegate.swift */,
 				EFCDDF9E27BC3127006DF178 /* SceneDelegate.swift */,
@@ -121,6 +134,7 @@
 		EFCDDFB227BC312A006DF178 /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFE527BC36A8006DF178 /* Extensions */,
 				EFCDDFD327BC325B006DF178 /* Board */,
 			);
 			path = TicTacToeTests;
@@ -138,6 +152,8 @@
 		EFCDDFCC27BC3196006DF178 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFDF27BC35DC006DF178 /* Model */,
+				EFCDDFDA27BC34D1006DF178 /* View */,
 				EFCDDFCD27BC31A6006DF178 /* BoardCoordinator.swift */,
 				EFCDDFCF27BC31B1006DF178 /* BoardViewController.swift */,
 				EFCDDFD127BC31C1006DF178 /* BoardViewModel.swift */,
@@ -148,11 +164,53 @@
 		EFCDDFD327BC325B006DF178 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFE827BC36DF006DF178 /* View */,
 				EFCDDFD427BC326F006DF178 /* BoardCoordinatorTests.swift */,
 				EFCDDFD627BC327D006DF178 /* BoardViewControllerTests.swift */,
 				EFCDDFD827BC3287006DF178 /* BoardViewModelTests.swift */,
 			);
 			path = Board;
+			sourceTree = "<group>";
+		};
+		EFCDDFDA27BC34D1006DF178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFDD27BC34FF006DF178 /* BoardSquareView.swift */,
+				EFCDDFDB27BC34DF006DF178 /* BoardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFCDDFDF27BC35DC006DF178 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFCDDFE227BC367F006DF178 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFE327BC368F006DF178 /* UIStackView+Subviews.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFCDDFE527BC36A8006DF178 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFCDDFE827BC36DF006DF178 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +345,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCDDFE427BC368F006DF178 /* UIStackView+Subviews.swift in Sources */,
 				EFCDDFCE27BC31A6006DF178 /* BoardCoordinator.swift in Sources */,
 				EFCDDF9D27BC3127006DF178 /* AppDelegate.swift in Sources */,
 				EFCDDF9F27BC3127006DF178 /* SceneDelegate.swift in Sources */,
+				EFCDDFE127BC35E6006DF178 /* BoardConfiguration.swift in Sources */,
+				EFCDDFDC27BC34DF006DF178 /* BoardView.swift in Sources */,
 				EFCDDFD027BC31B1006DF178 /* BoardViewController.swift in Sources */,
 				EFCDDFD227BC31C1006DF178 /* BoardViewModel.swift in Sources */,
+				EFCDDFDE27BC34FF006DF178 /* BoardSquareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,9 +361,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCDDFEA27BC36E6006DF178 /* BoardSquareViewTests.swift in Sources */,
 				EFCDDFD527BC326F006DF178 /* BoardCoordinatorTests.swift in Sources */,
 				EFCDDFD727BC327D006DF178 /* BoardViewControllerTests.swift in Sources */,
 				EFCDDFD927BC3287006DF178 /* BoardViewModelTests.swift in Sources */,
+				EFCDDFE727BC36BB006DF178 /* UIStackView+SubviewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

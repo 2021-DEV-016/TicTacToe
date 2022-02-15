@@ -17,7 +17,9 @@ final class BoardCoordinator {
     // MARK: - Public
     
     func start() -> UIViewController {
-        let viewModel = BoardViewModel()
+        let boardConfiguration = BoardConfiguration(size: 3)
+        
+        let viewModel = BoardViewModel(configuration: boardConfiguration)
         let viewController = BoardViewController(viewModel: viewModel)
         
         self.rootViewController = viewController

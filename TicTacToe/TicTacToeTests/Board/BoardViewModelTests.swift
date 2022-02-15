@@ -13,15 +13,30 @@ import XCTest
 class BoardViewModelTests: XCTestCase {
     private var boardViewModel: BoardViewModel!
     
+    private var didCreateBoard: Bool = false
+    
     override func setUp() {
         super.setUp()
 
-        boardViewModel = BoardViewModel()
+        let configuration = BoardConfiguration(size: 3)
+        boardViewModel = BoardViewModel(configuration: configuration)
+        
+        boardViewModel.createBoard = { [weak self] _ in
+            self?.didCreateBoard = true
+        }
     }
     
     override func tearDown() {
         boardViewModel = nil
         
         super.tearDown()
+    }
+    
+    func testViewDidLoad() {
+        XCTAssertFalse(didCreateBoard)
+        
+        boardViewModel.viewDidLoad()
+        
+        XCTAssertTrue(didCreateBoard)
     }
 }

@@ -12,7 +12,7 @@ import XCTest
 
 class BoardViewControllerTests: XCTestCase {
     private var boardViewController: BoardViewController!
-    private let viewModel = BoardViewModel()
+    private let viewModel = BoardViewModel(configuration: BoardConfiguration(size: 3))
     
     override func setUp() {
         super.setUp()
