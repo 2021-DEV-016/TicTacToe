@@ -63,6 +63,10 @@ class BoardViewController: UIViewController {
             self?.boardView.setup(size: size)
         }
         
+        viewModel.disableBoard = { [weak self] bool in
+            self?.boardView.isUserInteractionEnabled = !bool
+        }
+        
         viewModel.turnLabelText = { [weak self] text in
             self?.turnLabel.text = text
         }

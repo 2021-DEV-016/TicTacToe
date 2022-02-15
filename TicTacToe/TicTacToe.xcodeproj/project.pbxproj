@@ -27,6 +27,12 @@
 		EFCDDFE727BC36BB006DF178 /* UIStackView+SubviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */; };
 		EFCDDFEA27BC36E6006DF178 /* BoardSquareViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */; };
 		EFCDDFEC27BC3D97006DF178 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFEB27BC3D97006DF178 /* Player.swift */; };
+		EFCDDFEF27BC40C3006DF178 /* BoardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFEE27BC40C3006DF178 /* BoardEngine.swift */; };
+		EFCDDFF127BC40CB006DF178 /* DefaultBoardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF027BC40CB006DF178 /* DefaultBoardEngine.swift */; };
+		EFCDDFF327BC40EE006DF178 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF227BC40EE006DF178 /* Move.swift */; };
+		EFCDDFF527BC40F7006DF178 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF427BC40F7006DF178 /* GameState.swift */; };
+		EFCDDFF827BC41C8006DF178 /* BoardEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF727BC41C8006DF178 /* BoardEngineTests.swift */; };
+		EFCDDFFB27BC41FA006DF178 /* MockBoardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFFA27BC41FA006DF178 /* MockBoardEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,12 @@
 		EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+SubviewsTests.swift"; sourceTree = "<group>"; };
 		EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquareViewTests.swift; sourceTree = "<group>"; };
 		EFCDDFEB27BC3D97006DF178 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		EFCDDFEE27BC40C3006DF178 /* BoardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardEngine.swift; sourceTree = "<group>"; };
+		EFCDDFF027BC40CB006DF178 /* DefaultBoardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBoardEngine.swift; sourceTree = "<group>"; };
+		EFCDDFF227BC40EE006DF178 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		EFCDDFF427BC40F7006DF178 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		EFCDDFF727BC41C8006DF178 /* BoardEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardEngineTests.swift; sourceTree = "<group>"; };
+		EFCDDFFA27BC41FA006DF178 /* MockBoardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBoardEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,8 +148,9 @@
 		EFCDDFB227BC312A006DF178 /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				EFCDDFE527BC36A8006DF178 /* Extensions */,
 				EFCDDFD327BC325B006DF178 /* Board */,
+				EFCDDFE527BC36A8006DF178 /* Extensions */,
+				EFCDDFF927BC41ED006DF178 /* Mock */,
 			);
 			path = TicTacToeTests;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 		EFCDDFCC27BC3196006DF178 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFED27BC40B3006DF178 /* Engine */,
 				EFCDDFDF27BC35DC006DF178 /* Model */,
 				EFCDDFDA27BC34D1006DF178 /* View */,
 				EFCDDFCD27BC31A6006DF178 /* BoardCoordinator.swift */,
@@ -166,6 +180,7 @@
 		EFCDDFD327BC325B006DF178 /* Board */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFF627BC41BD006DF178 /* Engine */,
 				EFCDDFE827BC36DF006DF178 /* View */,
 				EFCDDFD427BC326F006DF178 /* BoardCoordinatorTests.swift */,
 				EFCDDFD627BC327D006DF178 /* BoardViewControllerTests.swift */,
@@ -187,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */,
+				EFCDDFF427BC40F7006DF178 /* GameState.swift */,
+				EFCDDFF227BC40EE006DF178 /* Move.swift */,
 				EFCDDFEB27BC3D97006DF178 /* Player.swift */,
 			);
 			path = Model;
@@ -214,6 +231,31 @@
 				EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EFCDDFED27BC40B3006DF178 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFEE27BC40C3006DF178 /* BoardEngine.swift */,
+				EFCDDFF027BC40CB006DF178 /* DefaultBoardEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		EFCDDFF627BC41BD006DF178 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFF727BC41C8006DF178 /* BoardEngineTests.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		EFCDDFF927BC41ED006DF178 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDDFFA27BC41FA006DF178 /* MockBoardEngine.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,9 +392,13 @@
 			files = (
 				EFCDDFE427BC368F006DF178 /* UIStackView+Subviews.swift in Sources */,
 				EFCDDFCE27BC31A6006DF178 /* BoardCoordinator.swift in Sources */,
+				EFCDDFF127BC40CB006DF178 /* DefaultBoardEngine.swift in Sources */,
+				EFCDDFF327BC40EE006DF178 /* Move.swift in Sources */,
 				EFCDDF9D27BC3127006DF178 /* AppDelegate.swift in Sources */,
 				EFCDDF9F27BC3127006DF178 /* SceneDelegate.swift in Sources */,
 				EFCDDFE127BC35E6006DF178 /* BoardConfiguration.swift in Sources */,
+				EFCDDFF527BC40F7006DF178 /* GameState.swift in Sources */,
+				EFCDDFEF27BC40C3006DF178 /* BoardEngine.swift in Sources */,
 				EFCDDFDC27BC34DF006DF178 /* BoardView.swift in Sources */,
 				EFCDDFD027BC31B1006DF178 /* BoardViewController.swift in Sources */,
 				EFCDDFD227BC31C1006DF178 /* BoardViewModel.swift in Sources */,
@@ -367,8 +413,10 @@
 			files = (
 				EFCDDFEA27BC36E6006DF178 /* BoardSquareViewTests.swift in Sources */,
 				EFCDDFD527BC326F006DF178 /* BoardCoordinatorTests.swift in Sources */,
+				EFCDDFF827BC41C8006DF178 /* BoardEngineTests.swift in Sources */,
 				EFCDDFD727BC327D006DF178 /* BoardViewControllerTests.swift in Sources */,
 				EFCDDFD927BC3287006DF178 /* BoardViewModelTests.swift in Sources */,
+				EFCDDFFB27BC41FA006DF178 /* MockBoardEngine.swift in Sources */,
 				EFCDDFE727BC36BB006DF178 /* UIStackView+SubviewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

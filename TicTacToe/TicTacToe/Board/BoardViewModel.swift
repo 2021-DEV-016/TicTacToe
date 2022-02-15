@@ -13,10 +13,12 @@ final class BoardViewModel {
     // MARK: - Public Variables
     
     var createBoard: ((_ size: Int) -> Void)?
+    var disableBoard: ((Bool) -> Void)?
     var turnLabelText: ((_ turn: String) -> Void)?
     
     // MARK: - Internals
     
+    private let boardEngine: BoardEngine
     private let configuration: BoardConfiguration
     private var currentPlayer: Player {
         didSet {
@@ -26,7 +28,8 @@ final class BoardViewModel {
     
     // MARK: - Init
     
-    init(configuration: BoardConfiguration) {
+    init(boardEngine: BoardEngine, configuration: BoardConfiguration) {
+        self.boardEngine = boardEngine
         self.configuration = configuration
         self.currentPlayer = configuration.firstPlayer
     }
@@ -48,7 +51,15 @@ final class BoardViewModel {
     func didTapBoardSquare(view: BoardSquareView, columnNumber: Int, rowNumber: Int) {
         view.setTitle(currentPlayer.boardSquareTitle)
         
-        currentPlayer = currentPlayer.nextPlayer
+        let gameState = boardEngine.doMove(columnNumber: columnNumber, rowNumber: rowNumber, player: currentPlayer)
+        
+        switch gameState {
+        case .draw, .won(_):
+            // disable the board after win/draw condition
+            disableBoard?(true)
+        case .onGoing:
+            currentPlayer = currentPlayer.nextPlayer
+        }
     }
     
     func viewDidLoad() {
