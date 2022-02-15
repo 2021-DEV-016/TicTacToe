@@ -26,6 +26,7 @@
 		EFCDDFE427BC368F006DF178 /* UIStackView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE327BC368F006DF178 /* UIStackView+Subviews.swift */; };
 		EFCDDFE727BC36BB006DF178 /* UIStackView+SubviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */; };
 		EFCDDFEA27BC36E6006DF178 /* BoardSquareViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */; };
+		EFCDDFEC27BC3D97006DF178 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFEB27BC3D97006DF178 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		EFCDDFE327BC368F006DF178 /* UIStackView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Subviews.swift"; sourceTree = "<group>"; };
 		EFCDDFE627BC36BB006DF178 /* UIStackView+SubviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+SubviewsTests.swift"; sourceTree = "<group>"; };
 		EFCDDFE927BC36E6006DF178 /* BoardSquareViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardSquareViewTests.swift; sourceTree = "<group>"; };
+		EFCDDFEB27BC3D97006DF178 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */,
+				EFCDDFEB27BC3D97006DF178 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				EFCDDFDC27BC34DF006DF178 /* BoardView.swift in Sources */,
 				EFCDDFD027BC31B1006DF178 /* BoardViewController.swift in Sources */,
 				EFCDDFD227BC31C1006DF178 /* BoardViewModel.swift in Sources */,
+				EFCDDFEC27BC3D97006DF178 /* Player.swift in Sources */,
 				EFCDDFDE27BC34FF006DF178 /* BoardSquareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

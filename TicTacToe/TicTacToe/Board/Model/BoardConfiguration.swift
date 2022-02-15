@@ -8,5 +8,6 @@
 import Foundation
 
 struct BoardConfiguration {
+    let firstPlayer: Player
     let size: Int
 }
