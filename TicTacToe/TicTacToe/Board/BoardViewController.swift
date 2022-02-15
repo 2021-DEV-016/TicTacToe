@@ -29,6 +29,13 @@ class BoardViewController: UIViewController {
         return boardView
     }()
     
+    private let resetButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .blue
+        return button
+    }()
+    
     // MARK: - Internals
     
     private let viewModel: BoardViewModel
@@ -77,15 +84,30 @@ class BoardViewController: UIViewController {
         
         view.addSubview(turnLabel)
         view.addSubview(boardView)
+        view.addSubview(resetButton)
+        
+        resetButton.setTitle(viewModel.resetButtonTitle, for: .normal)
+        resetButton.addTarget(self, action: #selector(didTapReset(_:)), for: .touchUpInside)
         
         turnLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
         turnLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         turnLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-                
+        
+        resetButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        resetButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        resetButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        resetButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        
         boardView.topAnchor.constraint(equalTo: turnLabel.bottomAnchor, constant: 30).isActive = true
         boardView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         boardView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        boardView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100).isActive = true
+        boardView.bottomAnchor.constraint(equalTo: resetButton.topAnchor, constant: -30).isActive = true
+    }
+    
+    // MARK: - Selector
+    
+    @objc func didTapReset(_ sender: AnyObject) {
+        viewModel.didTapResetButton()
     }
 }
 

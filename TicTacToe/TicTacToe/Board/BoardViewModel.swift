@@ -24,6 +24,8 @@ final class BoardViewModel {
     var disableBoard: ((Bool) -> Void)?
     var turnLabelText: ((_ turn: String) -> Void)?
     
+    let resetButtonTitle: String = "Reset"
+    
     // MARK: - Internals
     
     private let boardEngine: BoardEngine
@@ -47,7 +49,9 @@ final class BoardViewModel {
     private func createNewBoard() {
         self.currentPlayer = configuration.firstPlayer
         
+        boardEngine.reset()
         createBoard?(configuration.size)
+        disableBoard?(false)
     }
     
     private func setTurnLabelText() {
@@ -78,6 +82,10 @@ final class BoardViewModel {
         disableBoard?(true)
         
         delegate?.mustShowAlert(self, alert: alert)
+    }
+    
+    func didTapResetButton() {
+        createNewBoard()
     }
     
     func viewDidLoad() {

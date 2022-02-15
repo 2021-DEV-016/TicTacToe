@@ -24,4 +24,8 @@ final class MockBoardEngine: BoardEngine {
 
         return .onGoing
     }
+    
+    func reset() {
+        self.moves = []
+    }
 }

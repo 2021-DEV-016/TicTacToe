@@ -80,4 +80,8 @@ final class DefaultBoardEngine: BoardEngine {
         
         return checkMoves(moves, player: player)
     }
+    
+    func reset() {
+        moves.removeAll()
+    }
 }

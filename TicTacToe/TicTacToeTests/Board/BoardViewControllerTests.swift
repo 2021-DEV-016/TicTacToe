@@ -29,4 +29,16 @@ class BoardViewControllerTests: XCTestCase {
     func testViewControllerNotNil() {
         XCTAssertNotNil(boardViewController)
     }
+    
+    func testDisableBoard() {
+        viewModel.disableBoard?(true)
+        
+        let view = boardViewController.view.subviews.filter({ $0 is BoardView }).first as? BoardView
+        
+        XCTAssertEqual(view?.isUserInteractionEnabled, false)
+        
+        viewModel.disableBoard?(false)
+        
+        XCTAssertEqual(view?.isUserInteractionEnabled, true)
+    }
 }

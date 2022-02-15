@@ -10,5 +10,6 @@ import Foundation
 protocol BoardEngine: AnyObject {
     
     func doMove(columnNumber: Int, rowNumber: Int, player: Player) -> GameState
-
+    func reset()
+    
 }

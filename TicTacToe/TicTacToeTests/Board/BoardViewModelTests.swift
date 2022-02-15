@@ -98,6 +98,18 @@ class BoardViewModelTests: XCTestCase {
         
         XCTAssertTrue(didShowAlert)
     }
+    
+    func testDidTapResetButton() {
+        didDisableBoard = true
+        XCTAssertFalse(didCreateBoard)
+        XCTAssertEqual(boardEngine.moves.count, 2)
+        
+        boardViewModel.didTapResetButton()
+        
+        XCTAssertEqual(boardEngine.moves.count, 0)
+        XCTAssertTrue(didCreateBoard)
+        XCTAssertFalse(didDisableBoard)
+    }
 }
 
 extension BoardViewModelTests: BoardViewModelDelegate {
