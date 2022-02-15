@@ -33,6 +33,7 @@
 		EFCDDFF527BC40F7006DF178 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF427BC40F7006DF178 /* GameState.swift */; };
 		EFCDDFF827BC41C8006DF178 /* BoardEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFF727BC41C8006DF178 /* BoardEngineTests.swift */; };
 		EFCDDFFB27BC41FA006DF178 /* MockBoardEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFFA27BC41FA006DF178 /* MockBoardEngine.swift */; };
+		EFCDDFFD27BC4AA6006DF178 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDDFFC27BC4AA6006DF178 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		EFCDDFF427BC40F7006DF178 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		EFCDDFF727BC41C8006DF178 /* BoardEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardEngineTests.swift; sourceTree = "<group>"; };
 		EFCDDFFA27BC41FA006DF178 /* MockBoardEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBoardEngine.swift; sourceTree = "<group>"; };
+		EFCDDFFC27BC4AA6006DF178 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		EFCDDFDF27BC35DC006DF178 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFCDDFFC27BC4AA6006DF178 /* Alert.swift */,
 				EFCDDFE027BC35E6006DF178 /* BoardConfiguration.swift */,
 				EFCDDFF427BC40F7006DF178 /* GameState.swift */,
 				EFCDDFF227BC40EE006DF178 /* Move.swift */,
@@ -393,6 +396,7 @@
 				EFCDDFE427BC368F006DF178 /* UIStackView+Subviews.swift in Sources */,
 				EFCDDFCE27BC31A6006DF178 /* BoardCoordinator.swift in Sources */,
 				EFCDDFF127BC40CB006DF178 /* DefaultBoardEngine.swift in Sources */,
+				EFCDDFFD27BC4AA6006DF178 /* Alert.swift in Sources */,
 				EFCDDFF327BC40EE006DF178 /* Move.swift in Sources */,
 				EFCDDF9D27BC3127006DF178 /* AppDelegate.swift in Sources */,
 				EFCDDF9F27BC3127006DF178 /* SceneDelegate.swift in Sources */,

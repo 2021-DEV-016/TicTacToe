@@ -8,7 +8,15 @@
 
 import Foundation
 
+protocol BoardViewModelDelegate: AnyObject {
+    func mustShowAlert(_ viewModel: BoardViewModel, alert: Alert)
+}
+
 final class BoardViewModel {
+    
+    // MARK: - Delegate
+    
+    weak var delegate: BoardViewModelDelegate?
     
     // MARK: - Public Variables
     
@@ -53,13 +61,23 @@ final class BoardViewModel {
         
         let gameState = boardEngine.doMove(columnNumber: columnNumber, rowNumber: rowNumber, player: currentPlayer)
         
+        var alert: Alert?
+        
         switch gameState {
-        case .draw, .won(_):
-            // disable the board after win/draw condition
-            disableBoard?(true)
+        case .draw:
+            alert = Alert(title: "DRAW", description: "Nobody won", button: "Ok")
+        case .won(let player):
+            alert = Alert(title: "WON", description: "Player: \(player.boardSquareTitle) won", button: "Ok")
         case .onGoing:
             currentPlayer = currentPlayer.nextPlayer
         }
+        
+        guard let alert = alert else { return }
+        
+        // disable the board after win/draw condition
+        disableBoard?(true)
+        
+        delegate?.mustShowAlert(self, alert: alert)
     }
     
     func viewDidLoad() {

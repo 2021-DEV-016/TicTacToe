@@ -14,6 +14,7 @@ class BoardViewModelTests: XCTestCase {
     private var boardEngine: MockBoardEngine!
     private var boardViewModel: BoardViewModel!
     
+    private var didShowAlert: Bool = false
     private var didCreateBoard: Bool = false
     private var didDisableBoard: Bool = false
     private var turnLabelText: String? = nil
@@ -22,8 +23,10 @@ class BoardViewModelTests: XCTestCase {
         super.setUp()
 
         let configuration = BoardConfiguration(firstPlayer: .x, size: 3)
-        boardEngine = MockBoardEngine()
+        let moves = [Move(columnNumber: 0, rowNumber: 0, player: .x), Move(columnNumber: 1, rowNumber: 1, player: .y)]
+        boardEngine = MockBoardEngine(moves: moves)
         boardViewModel = BoardViewModel(boardEngine: boardEngine, configuration: configuration)
+        boardViewModel.delegate = self
         
         boardViewModel.createBoard = { [weak self] _ in
             self?.didCreateBoard = true
@@ -86,5 +89,19 @@ class BoardViewModelTests: XCTestCase {
         
         boardViewModel.viewDidLoad()
         XCTAssertEqual(turnLabelText, "Turn player: 0")
+    }
+    
+    func testDidTapBoardSquareAlert() {
+        XCTAssertFalse(didShowAlert)
+        
+        boardViewModel.didTapBoardSquare(view: BoardSquareView(), columnNumber: 80, rowNumber: 80)
+        
+        XCTAssertTrue(didShowAlert)
+    }
+}
+
+extension BoardViewModelTests: BoardViewModelDelegate {
+    func mustShowAlert(_ viewModel: BoardViewModel, alert: Alert) {
+        didShowAlert = true
     }
 }

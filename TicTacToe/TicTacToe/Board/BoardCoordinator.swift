@@ -21,10 +21,26 @@ final class BoardCoordinator {
         let boardEngine = DefaultBoardEngine(size: boardConfiguration.size)
         
         let viewModel = BoardViewModel(boardEngine: boardEngine, configuration: boardConfiguration)
+        viewModel.delegate = self
         let viewController = BoardViewController(viewModel: viewModel)
         
         self.rootViewController = viewController
         
         return viewController
+    }
+}
+
+// MARK: - BoardViewModelDelegate
+
+extension BoardCoordinator: BoardViewModelDelegate {
+    
+    func mustShowAlert(_ viewModel: BoardViewModel, alert: Alert) {
+        let alertController = UIAlertController(title: alert.title, message: alert.description, preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: alert.button, style: .default, handler: { _ in
+            alertController.dismiss(animated: true, completion: nil)
+        }))
+
+        rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }
